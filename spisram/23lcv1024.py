@@ -1,7 +1,7 @@
 # Low level driver for SPI Serial SRAM 23LCV1024
 # Copyright (c) 2022 Petr Kracik
 
-from . import SRAM
+from spisram import SRAM
 
 class SRAM23LCV1024(SRAM):
     INSTRUCTION_READ = 0x03

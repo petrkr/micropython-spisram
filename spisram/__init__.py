@@ -2,6 +2,8 @@
 # Copyright (c) 2022 Petr Kracik
 
 __version__ = "0.0.1"
+__license__ = "MIT"
+__author__ = "Petr Kracik"
 
 
 class SRAM:
