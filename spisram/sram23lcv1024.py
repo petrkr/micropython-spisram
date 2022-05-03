@@ -11,7 +11,7 @@ class SRAM23LCV1024(SRAM):
 
     def __init__(self, spi, cs):
         super().__init__()
-        self._size = 131072
+        self._size = 131072  # 0x00000 - 0x1FFFF
         self._spi = spi
         self._cs = cs
 
