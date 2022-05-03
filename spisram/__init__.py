@@ -20,6 +20,6 @@ class SRAM:
         raise NotImplementedError()
 
 
-    def write(self, data, address, check=True):
+    def write(self, address, data, check=True):
         raise NotImplementedError()
 

@@ -60,7 +60,7 @@ class SRAM23LCV1024(SRAM):
         return data
 
 
-    def write(self, data, address, check=True):
+    def write(self, address, data, check=True):
         if address > self.size - 1 or address < 0:
             raise ValueError("Attemped to write outside of address range (0--{})".format(self.size - 1))
 
