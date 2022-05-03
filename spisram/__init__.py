@@ -11,10 +11,10 @@ class SRAM:
         pass
 
 
-    def read(count = 1, address = 0):
+    def read(self, address, count = 1):
         raise NotImplementedError()
 
 
-    def write(data, address):
+    def write(self, data, address, check=True):
         raise NotImplementedError()
 
