@@ -1,4 +1,4 @@
-# micropython-ndeflib
+# micropython-spisram
 SPI Serial SRAM library for micropython
 
 Primary used to work with 23LCV1024 memory which support battery backup and can be used as EEPROM/Flash but with unlimited number of writes. For applications where you need offten writes.
