@@ -10,6 +10,8 @@ class SRAM23LCV1024(SRAM):
     INSTRUCTION_WRMR = 0x01
 
     def __init__(self, spi, cs):
+        super().__init__()
+        self._size = 131072
         self._spi = spi
         self._cs = cs
 
