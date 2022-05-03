@@ -1,4 +1,4 @@
-# Driver for SPI Serial SRAM
+# Base driver for SRAM
 # Copyright (c) 2022 Petr Kracik
 
 __version__ = "0.0.1"
