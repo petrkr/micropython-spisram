@@ -14,6 +14,32 @@ class SRAM23LCV1024(SRAM):
         self._cs = cs
 
 
+    @property
+    def mode(self):
+        tmp = bytearray(1)
+        tmp[0] = self.INSTRUCTION_RDMR
+
+        self._cs.value(0)
+        self._spi.write(tmp)
+        data = self._spi.read(1)
+        self._cs.value(1)
+
+        return ord(data)
+
+
+    @mode.setter
+    def mode(self, value):
+        tmp = bytearray(2)
+        tmp[0] = self.INSTRUCTION_WRMR
+        tmp[1] = chr(value)
+
+        self._cs.value(0)
+        self._spi.write(tmp)
+        self._cs.value(1)
+
+        return value == self.mode
+
+
     def read(self, address, count = 1):
         tmp = bytearray(4)
         tmp[0] = self.INSTRUCTION_READ
