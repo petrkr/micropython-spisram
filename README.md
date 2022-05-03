@@ -10,3 +10,4 @@ Nice2have TODO:
   - IO Stream support
   - Page/Byte access modes (for example to prevent overwritting other data by buffer overflow)
   - Filesystem emulation (? - maybe if there will be IOStream, then someother lib could be used?)
+  - Direct support to write other data types than buffer ? Like string, int
