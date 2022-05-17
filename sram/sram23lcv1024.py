@@ -42,7 +42,7 @@ class SRAM23LCV1024(SRAM):
         return value == self.mode
 
 
-    def read(self, address, count):
+    def read(self, address, count = 1):
         if address > self.size - 1 or address < 0:
             raise ValueError("Attemped to read outside of address range (0--{})".format(self.size - 1))
 

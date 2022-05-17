@@ -20,7 +20,7 @@ class SRAM:
         return self.read(0, 1)
 
 
-    def read(self, address, count):
+    def read(self, address, count = 1):
         raise NotImplementedError()
 
 
