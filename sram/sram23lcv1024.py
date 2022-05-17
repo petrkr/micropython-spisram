@@ -76,7 +76,7 @@ class SRAM23LCV1024(SRAM):
         self._cs.value(1)
 
         if check:
-            check = self.read(len(data), address)
+            check = self.read(address, len(data))
             return check == data
         else:
             return True
