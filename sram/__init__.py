@@ -25,15 +25,15 @@ class SRAM:
 
 
     def read(self, address, count=1):
-        if address > self.size - 1 or address < 0:
+        if address > self.size - 1 or address < 0 or address+count > self.size:
             raise ValueError("Attemped to read outside of address range (0--{})".format(self.size - 1))
 
         return self._read(address, count)
 
 
     def write(self, address, data, check=True):
-        if address > self.size - 1 or address < 0:
-            raise ValueError("Attemped to read outside of address range (0--{})".format(self.size - 1))
+        if address > self.size - 1 or address < 0 or address+len(data) > self.size:
+            raise ValueError("Attemped to write outside of address range (0--{}) or data are too big {}".format(self.size - 1, len(data)))
 
         self._write(address, data)
 
