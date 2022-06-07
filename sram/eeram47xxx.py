@@ -1,4 +1,4 @@
-# Low level driver for SPI Serial SRAM 23LCV1024
+# Low level driver for I2C EERAM 47xxx family
 # Copyright (c) 2022 Petr Kracik
 
 from sram import SRAM

@@ -1,3 +1,8 @@
+# Low level driver for I2C EERAM 47x16 family
+# Note: version 47C16 and 47L16 are different only by supply voltage
+
+# Copyright (c) 2022 Petr Kracik
+
 from sram.eeram47xxx import EERAM47XXX
 
 class EERAM47X16(EERAM47XXX):
