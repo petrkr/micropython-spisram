@@ -42,10 +42,7 @@ class SRAM23LCV1024(SRAM):
         return value == self.mode
 
 
-    def read(self, address, count = 1):
-        if address > self.size - 1 or address < 0:
-            raise ValueError("Attemped to read outside of address range (0--{})".format(self.size - 1))
-
+    def _read(self, address, count):
         tmp = bytearray(4)
         tmp[0] = self.INSTRUCTION_READ
         tmp[1] = ( address >> 16 ) & 0xFF
@@ -60,10 +57,7 @@ class SRAM23LCV1024(SRAM):
         return data
 
 
-    def write(self, address, data, check=True):
-        if address > self.size - 1 or address < 0:
-            raise ValueError("Attemped to write outside of address range (0--{})".format(self.size - 1))
-
+    def _write(self, address, data):
         tmp = bytearray(4)
         tmp[0] = self.INSTRUCTION_WRITE
         tmp[1] = ( address >> 16 ) & 0xFF
@@ -74,9 +68,3 @@ class SRAM23LCV1024(SRAM):
         self._spi.write(tmp)
         self._spi.write(data)
         self._cs.value(1)
-
-        if check:
-            check = self.read(address, len(data))
-            return check == data
-        else:
-            return True

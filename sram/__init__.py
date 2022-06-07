@@ -16,18 +16,28 @@ class SRAM:
         return self._size
 
 
-    def read(self):
-        return self.read(0, 1)
-
-
-    def read(self, address, count = 1):
+    def _read(self, address, count):
         raise NotImplementedError()
 
 
-    def write(self, data):
-        return self.write(0, data)
+    def _write(self, address, data):
+        raise NotImplementedError()
+
+
+    def read(self, address, count=1):
+        if address > self.size - 1 or address < 0:
+            raise ValueError("Attemped to read outside of address range (0--{})".format(self.size - 1))
+
+        return self._read(address, count)
 
 
     def write(self, address, data, check=True):
-        raise NotImplementedError()
+        if address > self.size - 1 or address < 0:
+            raise ValueError("Attemped to read outside of address range (0--{})".format(self.size - 1))
 
+        self._write(address, data)
+
+        if not check:
+            return True
+
+        return self._read(address, len(data)) == data
