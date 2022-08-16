@@ -1,5 +1,5 @@
 # micropython-sram
-SRAM/EERAM library for micropython
+SRAM/EERAM/FRAM library for micropython
 
 Primary used to work with 23LCV1024 (SPI SRAM with battery backup) memory which can be used as EEPROM/Flash but with unlimited number of writes. For applications where you need offten writes.
 

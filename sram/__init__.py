@@ -1,7 +1,7 @@
-# Base driver for SRAM
+# Base driver for SRAM/EERAM/FRAM
 # Copyright (c) 2022 Petr Kracik
 
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 __license__ = "MIT"
 __author__ = "Petr Kracik"
 
